@@ -1,11 +1,5 @@
 
     $(document).ready(function(){
-        // $('.list-children').on('mouseover',function(){
-        //     $(this).velocity('transition.flipBounceYIn')   //通过这种方式能导入velocity已经定义好的动画
-        // });
-
-        var times1, times2, times3, times4 = null;
-
       $('#fullpage').fullpage({
         anchors: ['home', 'about', 'skills', 'project','experience','contact'],
         menu: '.nav-list',
@@ -53,8 +47,7 @@
                             $(this).delay(i*250).velocity({scale: (1)});
                          })
                         $('.list-fl .list-children').velocity('transition.perspectiveLeftIn',{ stagger: 300}).velocity({opacity:1});
-                        $('.list-fr .list-children').delay(500).velocity('transition.perspectiveRightIn',{ stagger: 300}).velocity({opacity:1});
-                        
+                        $('.list-fr .list-children').delay(500).velocity('transition.perspectiveRightIn',{ stagger: 300}).velocity({opacity:1}); 
                     },200);
                     break;
                 case 4:
@@ -68,6 +61,7 @@
                     break;
             }
         },
+
         onLeave: function(nextIndex,index ){
             switch (index ) {
                 case 1:
@@ -135,9 +129,7 @@
       $('.children-img').each(function(i){
         $(this).css('backgroundImage','url('+ skills[i].imgUrl +')');
       })
-
-
-    });
+  });
 
 var skills = [
     {imgUrl: 'img/html.png'},

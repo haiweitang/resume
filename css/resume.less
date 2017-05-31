@@ -8,7 +8,6 @@ body {
 @active:#AE1C1C;
 @boxShadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 @boxShadowHover: 0 8px 17px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-@boxShadowHide: 0 0 0 0 rgba(0,0,0,0), 0 0 0x 0 rgba(0,0,0,0);
 .fl { float: left;}
 .fr { float: right;}
 .clear { zoom: 1; }
@@ -233,7 +232,8 @@ body {
 				transition: .3s;
 			}
 		}
-
+	.list-fl {margin: 0 4% 0 1%;}
+	.list-fr {margin: 30px 1% 0 4%}
 	.list {
 		width: 45%;
 		float: left;
@@ -531,7 +531,10 @@ body {
 	}
 
 	.skills-content {
-		.list {
+		.line { display: none;}
+		.list-fl {margin: 0 1% 0 1%;}
+		.list-fr {margin: 30px 1% 0 1%}
+		.list { width: 48%;
 			.list-children {
 				.triangle-down-right { display: none;}
 				.triangle-down-left { display: none;}
@@ -638,6 +641,9 @@ body {
 	}
 
 	.skills-content {
+		.line { display: none;}
+		.list-fl {margin: 0 1% 0 1%;}
+		.list-fr {margin: 30px 1% 0 1%}
 		.list {
 			.list-children {
 				.triangle-down-right { display: none;}

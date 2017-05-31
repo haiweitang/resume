@@ -340,6 +340,12 @@ body {
   transform: scale(0);
   transition: .3s;
 }
+.skills-content .list-fl {
+  margin: 0 4% 0 1%;
+}
+.skills-content .list-fr {
+  margin: 30px 1% 0 4%;
+}
 .skills-content .list {
   width: 45%;
   float: left;
@@ -681,6 +687,18 @@ body {
   .about-info .self-description {
     display: none;
   }
+  .skills-content .line {
+    display: none;
+  }
+  .skills-content .list-fl {
+    margin: 0 1% 0 1%;
+  }
+  .skills-content .list-fr {
+    margin: 30px 1% 0 1%;
+  }
+  .skills-content .list {
+    width: 48%;
+  }
   .skills-content .list .list-children .triangle-down-right {
     display: none;
   }
@@ -820,6 +838,15 @@ body {
   }
   .about-info .self-description {
     display: none;
+  }
+  .skills-content .line {
+    display: none;
+  }
+  .skills-content .list-fl {
+    margin: 0 1% 0 1%;
+  }
+  .skills-content .list-fr {
+    margin: 30px 1% 0 1%;
   }
   .skills-content .list .list-children .triangle-down-right {
     display: none;
