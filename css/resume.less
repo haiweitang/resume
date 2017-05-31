@@ -169,6 +169,7 @@ body {
 			display: inline-block;
 		}
 
+
 		.overview-name {
 			font-size: 25px;
 			span { font-weight: bold; color: @color; margin-left: 10px; font-size: 30px;}
@@ -215,6 +216,9 @@ body {
 			left: 50%; top: -10px;
 			background: @color;
 			box-shadow: @boxShadow;
+			transform: translateY(-600px);
+			opacity: 0;
+			transition: .3s;
 			ul { margin-top: 54px;}
 			.subset {
 				margin-bottom: 93px;
@@ -225,24 +229,26 @@ body {
 				border-radius: 5px;
 				background: @color;
 				margin: 0 0 19px -5px;
+				transform: scale(0);
+				transition: .3s;
 			}
 		}
+	.list-fl {margin: 0 4% 0 1%;}
+	.list-fr {margin: 30px 1% 0 4%}
 	.list {
 		width: 45%;
 		float: left;
 
-		.list-children:hover { box-shadow: @boxShadowHover;}
 		.list-children {
 			width: 100%;
 			padding: 10px;
 			box-sizing: border-box;
 			margin: 2% 0;
-			transition: .3s;
+			opacity: 0;
 			position: relative;
 			float: left;
 			box-shadow: @boxShadow;
 			background: @background;
-			transition: .4s;
 
 			.triangle-down-left {
 				.triangle;
@@ -297,17 +303,16 @@ body {
 		margin: 0 auto;
 		position: relative;
 
-			.demo-list:hover {box-shadow: @boxShadowHover;}
 			.demo-list {
 				width: 98%;
 				box-sizing: border-box;
 				color: #333;
 				background: @background;
-				transition: .4s;
 				position: relative;
 				top: 0;
 				margin: 0 1% 15px;
 				box-shadow: @boxShadow;
+				opacity: 0;
 
 				.demo-img {
 					width: 40%;
@@ -365,8 +370,7 @@ body {
 .work-content {
 	max-width: 1200px;
 	margin: 0 auto;
-	
-	.work-list:hover { box-shadow: @boxShadowHover;}
+
 	.work-list {
 		width: 30%;
 		margin: 0 1.111%;
@@ -374,8 +378,8 @@ body {
 		float: left;
 		margin-top: 25px;
 		box-shadow: @boxShadow;
-		transition: .3s;
 		position: relative;
+		opacity: 0;
 		.bg {width: 30%;  height: 300px;}
 		.work-list-warp { width: 100%; position: absolute; top: 0; left: 0; background: #fff; padding-bottom: 15px;}
 		.company {
@@ -401,16 +405,16 @@ body {
 
 
 .thank-text { padding: 1% 1%; font-size: 20px; margin-bottom: 15px; color: #999; text-align: center; }
-.contact-content:hover {box-shadow: @boxShadowHover; }
+
 .contact-content {
 	max-width: 800px;
 	margin: 40px auto 0;
 	position: relative;
 	box-sizing: border-box;
 	box-shadow: @boxShadow;
-	transition: .4s;
+	opacity: 0;
 
-	.contact-list-warp {background: #fff; height: 320px; padding: 0 20%;
+	.contact-list-warp {background: #fff; height: 320px; padding: 0 20%; 
 		.arrow-box {
 			padding: 5px 18px; margin: 20px 0 5px 0;
 		}
@@ -528,7 +532,10 @@ body {
 	}
 
 	.skills-content {
-		.list {
+		.line { display: none;}
+		.list-fl {margin: 0 1% 0 1%;}
+		.list-fr {margin: 30px 1% 0 1%}
+		.list { width: 48%;
 			.list-children {
 				.triangle-down-right { display: none;}
 				.triangle-down-left { display: none;}
@@ -635,6 +642,9 @@ body {
 	}
 
 	.skills-content {
+		.line { display: none;}
+		.list-fl {margin: 0 1% 0 1%;}
+		.list-fr {margin: 30px 1% 0 1%}
 		.list {
 			.list-children {
 				.triangle-down-right { display: none;}

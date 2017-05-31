@@ -1,22 +1,16 @@
 
     $(document).ready(function(){
-        /*$.Velocity.RegisterUI('daxia.slideUpIn',{
-            defaultDuration: 500,
-            calls: [
-                [{scaleX: [1, 0],scaleY: [1, 0],opacity: [1, 0]}]   //[动画结束，动画开始]
-            ]
-        });
-        var iconfont = $('.link .iconfont');
-        var seqScale = [
-            {
-                elements: iconfont,
-                properties: 'daxia.slideUpIn'
-            }
-        ]*/
+        // $('.list-children').on('mouseover',function(){
+        //     $(this).velocity('transition.flipBounceYIn')   //通过这种方式能导入velocity已经定义好的动画
+        // });
+
+        var times1, times2, times3, times4 = null;
+
       $('#fullpage').fullpage({
         anchors: ['home', 'about', 'skills', 'project','experience','contact'],
         menu: '.nav-list',
         scrollOverflow: true,
+        scrollingSpeed: 500,
         afterLoad: function(anchorLink,index){
             switch (index) {
                 case 1:
@@ -29,8 +23,8 @@
                     $('.home .english-title').delay(400).animate({top:0,opacity:1},'600');
                     $('.home .motto').delay(600).animate({top:0,opacity:1},'600',function(){
                         $('.underline').animate({width:lineWidth},'600',function(){
-                            $('.link a').css('transform','scale(1,1)');
-                            $('.home').animate({backgroundColor: "#fff"},'600');
+                            $('.link a').css('transform','scale(1)');
+                            $('.home').velocity({backgroundColor: "#fff"},600);
                         });
                     });
                     break;
@@ -38,15 +32,39 @@
                 case 2:
                     if($(window).width()>767){
                         var right = Math.ceil($('.about-me-content').width()*0.6);
-                        $('.about-me-content').animate({opacity:1},'slow');
-                        $('.about-img').animate({right:right},'slow');
-                        $('.about-info').animate({right:0},'slow');
+                        $('.about-me-content').velocity({opacity:1},500);
+                        $('.about-img').velocity({right:right},500);
+                        $('.about-info').velocity({right:0},500);
                     }else{
-                        $('.about-me-content').animate({opacity:1},'slow',function(){
-                            $('.about-img').css('transform','scale(1,1)');
+                        $('.about-me-content').velocity({opacity:1},500,function(){
+                            $('.about-img').css('transform','scale(1)');
                         });
-                        $('.about-info').animate({top:0},'slow');
+                        $('.about-info').velocity({top:0},500);
                     }
+                    break;
+
+                case 3:
+                    var skills = $('.skills-content');
+                    skills.find('.line').css('transform','translateY(0)').css('opacity','1');
+                    $('.skills-content .DoT').css('transform','scale(0)');
+                    $('.list-children').css('opacity',0);
+                    setTimeout(function(){
+                        skills.find('.DoT').each(function(i){
+                            $(this).delay(i*250).velocity({scale: (1)});
+                         })
+                        $('.list-fl .list-children').velocity('transition.perspectiveLeftIn',{ stagger: 300}).velocity({opacity:1});
+                        $('.list-fr .list-children').delay(500).velocity('transition.perspectiveRightIn',{ stagger: 300}).velocity({opacity:1});
+                        
+                    },200);
+                    break;
+                case 4:
+                    $('.demo-list').velocity('transition.bounceUpIn',{ stagger: 300});
+                    break;
+                case 5:
+                    $('.work-list').velocity('transition.flipBounceXIn',{stagger: 300}).velocity({opacity:1});
+                    break;
+                case 6:
+                    $('.contact-content').velocity('transition.bounceIn',{stagger: 300}).velocity({opacity:1});
                     break;
             }
         },
@@ -86,6 +104,29 @@
                     },500)
                     break;
 
+                case 3:
+                    setTimeout(function(){
+                        $('.list-children').stop(true).animate({'opacity':0});
+                        $('.skills-content .line').stop(true).css({'transform':'translateY(-600px)'}).css({'opacity':0});
+                        $('.skills-content .DoT').stop(true).css({'transform':'scale(0)'});
+                        $('.list-children').animate({'opacity':0});
+                    },500)
+                    break;
+                case 4:
+                    setTimeout(function(){
+                        $('.demo-list').stop(true).animate({'opacity':0});
+                    },500)
+                    break;
+                case 5:
+                    setTimeout(function(){
+                        $('.work-list').stop(true).animate({'opacity':0});
+                    },500)
+                    break;
+                case 6:
+                    setTimeout(function(){
+                        $('.contact-content').stop(true).animate({'opacity':0});
+                    },500)
+                    break;
             }
         }
 
