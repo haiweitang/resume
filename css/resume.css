@@ -136,30 +136,46 @@ body {
 .home {
   width: 85%;
   height: 280px;
-  background: #ffffff;
+  background: #e6e6e6;
   margin: 0 auto;
 }
 .home .home-title {
   width: 60%;
   height: 110px;
-  border-bottom: 1px solid #aaa;
   margin: 0 auto;
   text-align: center;
   color: #0eb57d;
   padding-top: 40px;
 }
-.home .home-title strong {
+.home .home-title .title {
   font-size: 25px;
+  position: relative;
+  top: 200px;
+  opacity: 0;
 }
 .home .home-title p {
   font-size: 15px;
   margin-top: 5px;
+  position: relative;
+  top: 200px;
+  opacity: 0;
+}
+.home .underline {
+  width: 0;
+  height: 1px;
+  background: #aaa;
+  margin: 0 auto;
 }
 .home .link {
   text-align: center;
 }
 .home .link div {
   padding-top: 30px;
+}
+.home .link div a {
+  transform: scale(0, 0);
+  transition: transform .5s;
+  display: inline-block;
 }
 .home .link div .iconfont {
   font-size: 40px;
@@ -189,21 +205,25 @@ body {
   margin: 0 1%;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   transition: .3s;
+  opacity: 0;
 }
 .about-img {
   float: left;
   width: 40%;
   height: 480px;
   background: url(../img/photo.jpg) no-repeat top right / cover;
+  right: 800px;
+  position: absolute;
 }
 .about-info {
-  float: left;
+  float: right;
   padding: 0 3%;
   background: #ffffff;
   width: 54%;
   color: #555;
   height: 480px;
   position: relative;
+  right: -1000px;
 }
 .about-info .info-header {
   height: 172px;
@@ -301,6 +321,9 @@ body {
   top: -10px;
   background: #0eb57d;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  transform: translateY(-600px);
+  opacity: 0;
+  transition: .3s;
 }
 .skills-content .line ul {
   margin-top: 54px;
@@ -314,25 +337,23 @@ body {
   border-radius: 5px;
   background: #0eb57d;
   margin: 0 0 19px -5px;
+  transform: scale(0);
+  transition: .3s;
 }
 .skills-content .list {
   width: 45%;
   float: left;
-}
-.skills-content .list .list-children:hover {
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .skills-content .list .list-children {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
   margin: 2% 0;
-  transition: .3s;
+  opacity: 0;
   position: relative;
   float: left;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   background: #ffffff;
-  transition: .4s;
 }
 .skills-content .list .list-children .triangle-down-left {
   width: 0;
@@ -380,19 +401,16 @@ body {
   margin: 0 auto;
   position: relative;
 }
-.project .project-content .demo-list:hover {
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 .project .project-content .demo-list {
   width: 98%;
   box-sizing: border-box;
   color: #333;
   background: #ffffff;
-  transition: .4s;
   position: relative;
   top: 0;
   margin: 0 1% 15px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  opacity: 0;
 }
 .project .project-content .demo-list .demo-img {
   width: 40%;
@@ -449,9 +467,6 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
-.work-content .work-list:hover {
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 .work-content .work-list {
   width: 30%;
   margin: 0 1.111%;
@@ -459,8 +474,8 @@ body {
   float: left;
   margin-top: 25px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  transition: .3s;
   position: relative;
+  opacity: 0;
 }
 .work-content .work-list .bg {
   width: 30%;
@@ -518,16 +533,13 @@ body {
   color: #999;
   text-align: center;
 }
-.contact-content:hover {
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 .contact-content {
   max-width: 800px;
   margin: 40px auto 0;
   position: relative;
   box-sizing: border-box;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  transition: .4s;
+  opacity: 0;
 }
 .contact-content .contact-list-warp {
   background: #fff;
@@ -611,11 +623,14 @@ body {
   .home .home-title {
     width: 90%;
   }
-  .home .home-title strong {
-    font-size: 15px;
+  .home .home-title .title {
+    font-size: 16px;
   }
   .home .home-title p {
     font-size: 12px;
+  }
+  .home .underline {
+    width: 0;
   }
   .home .link {
     text-align: center;
@@ -636,10 +651,14 @@ body {
     top: 5px;
     background-size: contain;
     z-index: 3;
+    transform: scale(0, 0);
+    transition: transform .5s;
   }
   .about-info {
     width: 96%;
     padding: 0 2%;
+    right: 0;
+    top: 500px;
   }
   .about-info .overview-name {
     font-size: 20px;
@@ -742,11 +761,14 @@ body {
   .home .home-title {
     width: 90%;
   }
-  .home .home-title strong {
-    font-size: 15px;
+  .home .home-title .title {
+    font-size: 16px;
   }
   .home .home-title p {
-    font-size: 12px;
+    font-size: 14px;
+  }
+  .home .underline {
+    width: 0;
   }
   .home .link {
     text-align: center;
@@ -759,6 +781,7 @@ body {
   }
   .about-me-content {
     width: 98%;
+    height: 450px;
   }
   .about-img {
     height: 130px;
@@ -767,10 +790,15 @@ body {
     top: 5px;
     background-size: contain;
     z-index: 3;
+    transform: scale(0, 0);
+    transition: transform .5s;
   }
   .about-info {
     width: 96%;
     padding: 0 2%;
+    right: 0;
+    height: 450px;
+    top: 500px;
   }
   .about-info .overview-name {
     font-size: 14px;
