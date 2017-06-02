@@ -131,6 +131,7 @@
       })
   });
 
+
 var skills = [
     {imgUrl: 'img/html.png'},
     {imgUrl: 'img/css.jpg'},
