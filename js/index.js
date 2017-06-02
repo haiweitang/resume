@@ -1,5 +1,6 @@
 
     $(document).ready(function(){
+
       $('#fullpage').fullpage({
         anchors: ['home', 'about', 'skills', 'project','experience','contact'],
         menu: '.nav-list',
@@ -47,21 +48,27 @@
                             $(this).delay(i*250).velocity({scale: (1)});
                          })
                         $('.list-fl .list-children').velocity('transition.perspectiveLeftIn',{ stagger: 300}).velocity({opacity:1});
-                        $('.list-fr .list-children').delay(500).velocity('transition.perspectiveRightIn',{ stagger: 300}).velocity({opacity:1}); 
+                        $('.list-fr .list-children').delay(500).velocity('transition.perspectiveRightIn',{ stagger: 300}).velocity({opacity:1});
+                        
                     },200);
                     break;
                 case 4:
                     $('.demo-list').velocity('transition.bounceUpIn',{ stagger: 300});
                     break;
                 case 5:
-                    $('.work-list').velocity('transition.flipBounceXIn',{stagger: 300}).velocity({opacity:1});
+                    if($(window).width()>768){
+                        $('.work-list').velocity('transition.flipBounceXIn',{stagger: 300}).velocity({opacity:1});
+                    }
+                    else {
+                        $('.work-list').css('display','none');
+                        $('.work-content').find('.active').velocity('transition.flipBounceXIn',{stagger: 300}).velocity({opacity:1})
+                    }
                     break;
                 case 6:
                     $('.contact-content').velocity('transition.bounceIn',{stagger: 300}).velocity({opacity:1});
                     break;
             }
         },
-
         onLeave: function(nextIndex,index ){
             switch (index ) {
                 case 1:
@@ -129,10 +136,9 @@
       $('.children-img').each(function(i){
         $(this).css('backgroundImage','url('+ skills[i].imgUrl +')');
       })
-  });
 
 
-
+    });
 
 var skills = [
     {imgUrl: 'img/html.png'},
