@@ -1,10 +1,5 @@
 
     $(document).ready(function(){
-        // $('.list-children').on('mouseover',function(){
-        //     $(this).velocity('transition.flipBounceYIn')   //通过这种方式能导入velocity已经定义好的动画
-        // });
-
-        var times1, times2, times3, times4 = null;
 
       $('#fullpage').fullpage({
         anchors: ['home', 'about', 'skills', 'project','experience','contact'],
@@ -61,7 +56,13 @@
                     $('.demo-list').velocity('transition.bounceUpIn',{ stagger: 300});
                     break;
                 case 5:
-                    $('.work-list').velocity('transition.flipBounceXIn',{stagger: 300}).velocity({opacity:1});
+                    if($(window).width()>768){
+                        $('.work-list').velocity('transition.flipBounceXIn',{stagger: 300}).velocity({opacity:1});
+                    }
+                    else {
+                        $('.work-list').css('display','none');
+                        $('.work-content').find('.active').velocity('transition.flipBounceXIn',{stagger: 300}).velocity({opacity:1})
+                    }
                     break;
                 case 6:
                     $('.contact-content').velocity('transition.bounceIn',{stagger: 300}).velocity({opacity:1});

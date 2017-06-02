@@ -215,6 +215,22 @@ body {
   right: 800px;
   position: absolute;
 }
+.about-img .mask {
+  width: 100%;
+  height: 480px;
+  background: rgba(255, 255, 255, 0.9);
+  line-height: 480px;
+  text-align: center;
+  opacity: 0;
+  transition: .5s;
+}
+.about-img .mask .download {
+  font-size: 150px;
+  color: #0eb57d;
+}
+.mask:hover {
+  opacity: 1;
+}
 .about-info {
   float: right;
   padding: 0 3%;
@@ -418,56 +434,88 @@ body {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   opacity: 0;
 }
-.project .project-content .demo-list .demo-img {
+.project .project-content .demo-list .project-img {
   width: 40%;
   height: 250px;
   float: left;
 }
-.project .project-content .demo-list .demo-img-bg1 {
+.project .project-content .demo-list .project-img-bg1 {
   background: url(../img/b-1.jpg) no-repeat center center / cover;
 }
-.project .project-content .demo-list .demo-img-bg2 {
+.project .project-content .demo-list .project-img-bg2 {
   background: url(../img/b-2.png) no-repeat center center / cover;
 }
-.project .project-content .demo-list .demo-text {
+.project .project-content .demo-list .project-text {
   float: left;
   width: 60%;
-  height: 250px;
   padding: 1% 2%;
   box-sizing: border-box;
   background: #ffffff;
   position: relative;
 }
-.project .project-content .demo-list .demo-text .text-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: #0eb57d;
-  margin-bottom: 5px;
-  padding-bottom: 10px;
+.project .project-content .demo-list .project-text .describe-header {
+  padding: 10px 10px 10px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
-.project .project-content .demo-list .demo-text hr {
-  color: red;
-  margin-bottom: 1%;
+.project .project-content .demo-list .project-text .project-title {
+  font-size: 20px;
+  color: #0eb57d;
+  float: left;
 }
-.project .project-content .demo-list .demo-link {
-  width: 180px;
-  border-radius: 5px;
-  position: absolute;
-  bottom: 1%;
-  left: 2%;
-}
-.project .project-content .demo-list .demo-link a {
-  display: inline-block;
-  width: 70px;
+.project .project-content .demo-list .project-text .demo-link {
+  display: block;
+  width: 50px;
   height: 20px;
-  background: #0eb57d;
+  border-radius: 5px;
+  border: 1px solid #0eb57d;
   text-align: center;
   line-height: 20px;
+  font-size: 16px;
+  color: #0eb57d;
+  float: right;
+  transition: .5s;
+}
+.project .project-content .demo-list .project-text .demo-link:hover {
+  background: #0eb57d;
   color: #fff;
 }
-.project .project-content .demo-list .demo-link .first {
-  margin-bottom: 10px;
+.project .project-content .demo-list .project-text .project-description {
+  font-size: 14px;
+}
+.project .project-content .demo-list .project-text .project-description li {
+  list-style-type: disc;
+}
+.project .project-content .demo-list .project-text .h4 {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.project .project-content .demo-list .project-text .technology {
+  width: 50%;
+  float: left;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+.project .project-content .demo-list .project-text .technology ul {
+  padding-right: 8%;
+  margin-left: 15px;
+  box-sizing: border-box;
+}
+.project .project-content .demo-list .project-text .technology h4 {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.project .project-content .demo-list .project-text .responsibility {
+  width: 50%;
+  float: left;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+.project .project-content .demo-list .project-text .responsibility ul {
+  margin-left: 15px;
+}
+.project .project-content .demo-list .project-text .responsibility h4 {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
 }
 .work-content {
   max-width: 1200px;
@@ -499,6 +547,7 @@ body {
   height: 50px;
   padding: 30px 30px 20px;
   background: #0eb57d;
+  position: relative;
 }
 .work-content .work-list .company h3 {
   font-size: 16px;
@@ -510,6 +559,17 @@ body {
   color: #fff;
   margin-top: 5px;
   display: block;
+}
+.work-content .work-list .company .label {
+  padding: 3px 12px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-weight: normal;
 }
 .work-content .work-list .job-content {
   padding: 20px 30px 0;
@@ -533,9 +593,10 @@ body {
   margin-top: 0;
 }
 .thank-text {
+  width: 80%;
   padding: 1% 1%;
   font-size: 20px;
-  margin-bottom: 15px;
+  margin: 0 auto 15px;
   color: #999;
   text-align: center;
 }
@@ -730,12 +791,18 @@ body {
   .project .project-content .demo-list .triangle-down-left {
     display: none;
   }
-  .project .project-content .demo-list .demo-img {
+  .project .project-content .demo-list .project-img {
     width: 100%;
   }
-  .project .project-content .demo-list .demo-text {
+  .project .project-content .demo-list .project-text {
     width: 100%;
     margin-top: 20px;
+  }
+  .project .project-content .demo-list .project-text .technology {
+    width: 100%;
+  }
+  .project .project-content .demo-list .project-text .responsibility {
+    width: 100%;
   }
   .work-content {
     margin-bottom: 20px;
@@ -746,16 +813,16 @@ body {
   .work-content .active {
     margin-top: 25px;
   }
+  .thank-text {
+    font-size: 16px;
+    width: 80%;
+  }
   .contact-content {
     width: 100%;
     padding: 0 1%;
   }
   .contact-content .contact-list-warp {
     padding: 0 0 0 15%;
-  }
-  .contact-content .thank-text {
-    font-size: 18px;
-    margin: 0 auto;
   }
   .contact-content .contact-list .iconfont {
     font-size: 40px;
@@ -876,12 +943,18 @@ body {
   .project .project-content .demo-list .triangle-down-left {
     display: none;
   }
-  .project .project-content .demo-list .demo-img {
+  .project .project-content .demo-list .project-img {
     width: 100%;
   }
-  .project .project-content .demo-list .demo-text {
+  .project .project-content .demo-list .project-text {
     width: 100%;
     margin-top: 20px;
+  }
+  .project .project-content .demo-list .project-text .technology {
+    width: 100%;
+  }
+  .project .project-content .demo-list .project-text .responsibility {
+    width: 100%;
   }
   .work-content .work-list {
     width: 98%;

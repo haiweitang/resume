@@ -146,7 +146,13 @@ body {
 	box-shadow: @boxShadow; transition: .3s; opacity: 0;}
 
 .about-img { float: left; width: 40%; height: 480px; background: url(../img/photo.jpg) no-repeat top right/cover;
- 	right: 800px; position: absolute;  }
+ 	right: 800px; position: absolute; 
+
+	.mask {width: 100%; height: 480px; background: rgba(255,255,255,0.9); line-height: 480px; text-align: center; opacity: 0; transition: .5s;
+		.download { font-size: 150px; color: @color;}
+ 	 }
+	}
+	.mask:hover {opacity: 1;}
 .about-info {
 	float: right;
 	padding: 0 3%;
@@ -314,52 +320,63 @@ body {
 				box-shadow: @boxShadow;
 				opacity: 0;
 
-				.demo-img {
+				.project-img {
 					width: 40%;
 					height: 250px;
 					float: left;
 				}
 
-				.demo-img-bg1 {background: url(../img/b-1.jpg) no-repeat center center/cover;}
-				.demo-img-bg2 {background: url(../img/b-2.png) no-repeat center center/cover;}
+				.project-img-bg1 {background: url(../img/b-1.jpg) no-repeat center center/cover;}
+				.project-img-bg2 {background: url(../img/b-2.png) no-repeat center center/cover;}
 
-				.demo-text {
+				.project-text {
 					float: left;
 					width: 60%;
-					height: 250px;
 					padding: 1% 2%;
 					box-sizing: border-box;
 					background: @background;
 					position: relative;
 
-					.text-title {
-						font-size: 20px;
-						font-weight: bold;
-						color: @color;
-						margin-bottom: 5px;
-						padding-bottom: 10px;
+					.describe-header {
+						padding: 10px 10px 10px 0;
 						border-bottom: 1px solid rgba(0,0,0,0.2);
 					}
-					hr {color: red; margin-bottom: 1%;}
-				}
-
-				.demo-link {
-					width: 180px;
-					border-radius: 5px;
-					position: absolute;
-					bottom: 1%;
-					left: 2%;
-
-					a {
-						display: inline-block;
-						width: 70px;
+					.project-title {font-size: 20px;color: @color; float: left;}
+					.demo-link {
+						display: block;
+						width: 50px;
 						height: 20px;
-						background: @color;
+						border-radius: 5px;
+						border: 1px solid @color;
 						text-align: center;
 						line-height: 20px;
-						color: #fff;
+						font-size: 16px;
+						color: @color;
+						float: right;
+						transition: .5s;
 					}
-					.first { margin-bottom: 10px;}
+					.demo-link:hover {background: @color; color: #fff;}
+					.project-description { font-size: 14px;
+						li {
+						list-style-type: disc;
+						}
+					}
+					.h4 {padding-bottom: 5px; margin-bottom: 5px; }
+					.technology {width: 50%; float: left; margin-top: 10px; padding-bottom: 10px; 
+						ul {
+							padding-right: 8%;  margin-left: 15px; box-sizing: border-box;
+						}
+
+						h4 {.h4;}
+					}
+					.responsibility {width: 50%;  float: left; margin-top: 10px; padding-bottom: 10px; 
+						ul { margin-left: 15px;
+
+						}
+
+
+						h4 {.h4;}
+					}
 				}
 			}
 
@@ -386,8 +403,12 @@ body {
 			height: 50px;
 			padding: 30px 30px 20px;
 			background: @color;
+			position: relative;
 			h3 { font-size: 16px; color: #fff; font-weight: normal;}
 			span { font-size: 14px; color: #fff; margin-top: 5px; display: block;}
+			.label { padding: 3px 12px; text-align: center; color: #fff; border: 1px solid #fff; border-radius: 10px;
+				position: absolute;	right: 20px; top: 20px; font-weight: normal;
+			}
 		}
 
 		.job-content {
@@ -404,7 +425,7 @@ body {
 }
 
 
-.thank-text { padding: 1% 1%; font-size: 20px; margin-bottom: 15px; color: #999; text-align: center; }
+.thank-text { width: 80%; padding: 1% 1%; font-size: 20px; margin: 0 auto 15px; color: #999; text-align: center; }
 
 .contact-content {
 	max-width: 800px;
@@ -414,7 +435,7 @@ body {
 	box-shadow: @boxShadow;
 	opacity: 0;
 
-	.contact-list-warp {background: #fff; height: 320px; padding: 0 20%; 
+	.contact-list-warp {background: #fff; height: 320px; padding: 0 20%;
 		.arrow-box {
 			padding: 5px 18px; margin: 20px 0 5px 0;
 		}
@@ -566,10 +587,12 @@ body {
 				margin-left: 1%;
 				.triangle-down-right { display: none;}
 				.triangle-down-left { display: none;}
-				.demo-img { width: 100%;}
-				.demo-text {
+				.project-img { width: 100%;}
+				.project-text {
 					width: 100%;
 					margin-top: 20px;
+					.technology {width: 100%;}
+					.responsibility {width: 100%; }
 				}
 			}
 		}
@@ -583,11 +606,12 @@ body {
 		.active { margin-top: 25px;}
 	}
 
+	.thank-text { font-size: 16px; width: 80%;}
 	.contact-content {
 		width: 100%;
 		padding: 0 1%;
 		.contact-list-warp { padding: 0 0 0 15%;}
-		.thank-text { font-size: 18px; margin: 0 auto;}
+
 		.contact-list {
 			.iconfont { font-size: 40px; margin-right: 10px; }
 			strong {
@@ -673,10 +697,12 @@ body {
 			.demo-list { width: 98%; margin-left: 1%;
 				.triangle-down-right { display: none;}
 				.triangle-down-left { display: none;}
-				.demo-img { width: 100%;}
-				.demo-text {
+				.project-img { width: 100%;}
+				.project-text {
 					width: 100%;
 					margin-top: 20px;
+					.technology {width: 100%;}
+					.responsibility {width: 100%; }
 				}
 			}
 		}
@@ -686,7 +712,7 @@ body {
 		.work-list {
 			width: 98%;
 		}
-		.active { margin-top: 25px;}
+		.active { margin-top: 25px; }
 	}
 
 	.contact-content {
