@@ -142,7 +142,7 @@
 
 var skills = [
     {imgUrl: 'img/html.png'},
-    {imgUrl: 'img/css.jpg'},
+    {imgUrl: 'img/css.png'},
     {imgUrl: 'img/js.png'},
     {imgUrl: 'img/jq.png'},
     {imgUrl: 'img/less.png'},
